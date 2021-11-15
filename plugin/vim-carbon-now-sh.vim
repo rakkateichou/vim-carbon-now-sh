@@ -15,7 +15,7 @@ function! s:carbonNowSh() range
   let l:browser = s:getBrowser()
   let l:options = type(g:carbon_now_sh_options) == v:t_dict ? s:getOptions() : g:carbon_now_sh_options
   let l:filetype = &filetype
-  let l:url = g:carbon_now_sh_base_url .. '/?l=' .. l:filetype .. '&code=' .. l:text .. '&' .. l:options
+  let l:url = g:carbon_now_sh_base_url .. '/?code=' .. l:text .. '&' .. l:options
 
   if has('win32') && l:browser ==? 'start' && &shell =~? '\<cmd\.exe$'
     return system(l:browser .. ' "" "' .. l:url .. '"')
